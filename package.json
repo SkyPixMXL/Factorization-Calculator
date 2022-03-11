@@ -1,0 +1,28 @@
+{
+  "name": "factorization-calculator",
+  "version": "1.0.0",
+  "description": "A calculator that computes factorization of a +integer and checks if it is prime. Written with React.js",
+  "scripts": {
+    "start": "webpack serve --mode=development --open",
+    "build": "webpack --mode=production"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.16.7",
+    "babel-loader": "^8.2.3",
+    "css-loader": "^6.7.1",
+    "html-webpack-plugin": "^5.5.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-react"
+    ]
+  }
+}
