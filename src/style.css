@@ -1,0 +1,306 @@
+:root {
+  --font-color: white;
+  --background-color: #262626;
+  --box-background-color: #3c3c3c;
+  --form-background-color: white;
+  --benchmarkingTest-bg: rgba(255, 255, 255, 0.8)
+}
+
+[data-theme="light"] {
+  --font-color: black;
+  --form-background-color: #ececec;
+  --box-background-color: #dbdbdb;
+  --background-color: white;
+  --benchmarkingTest-bg: #e2e2e2cc;
+}
+
+* {
+  font-family: consolas;
+  user-select: none
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--font-color);
+  animation: fade 2s;
+  margin: 0
+}
+
+input, button {
+  background-color: var(--form-background-color)
+}
+
+input:not([type="text"]), summary, select, button {
+  cursor: pointer
+}
+
+input, button, select {
+  text-align: center;
+  border: none;
+  outline: none
+}
+
+a {
+  color: #75a0f0;
+  text-decoration: none
+}
+
+button, input[type="submit"] {
+  padding: 0.5vw 0.8vw;
+  border-radius: 0.5vw;
+  font-size: 1.2vw
+}
+
+button[disabled] { cursor: not-allowed }
+
+h1 {
+  margin-top: 8vh;
+  text-align: center;
+  font-size: 4vw
+}
+
+form > input[type="text"] {
+  margin: 15vh auto 4vh auto;
+  display: block;
+  padding: 1.2vw 2.4vw;
+  font-size: 1.6vw;
+  border-radius: 1vw
+}
+
+form > input[type="submit"] {
+  margin: auto;
+  display: block
+}
+
+form > input:hover {
+  filter: drop-shadow(0 0 1vw white)
+}
+
+aside {
+  animation: fade 0.5s;
+  text-align: center;
+  width: 40vw;
+  border-radius: 1vw;
+  padding: 1vw 4vw;
+  color: black;
+  background-color: var(--benchmarkingTest-bg);
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+aside > h2 {
+  font-size: 2.5vw;
+  margin-top: 1vw
+}
+
+aside > p {
+  text-align: left;
+  font-size: 1.5vw
+}
+
+aside > button {
+  background-color: white
+}
+
+details {
+  width: 26vw;
+  position: absolute;
+  margin: 0 2vw;
+  top: 30vh
+}
+
+details > summary {
+  font-weight: bold;
+  font-size: 1.6vw;
+  margin-bottom: 1vw
+}
+
+details > section {
+  animation: fade 1s;
+  background-color: var(--box-background-color);
+  border-radius: 1vw;
+  padding: 1.5vw
+}
+
+details > section > span {
+  word-wrap: break-word;
+  font-size: 1.4vw;
+  display: block;
+  margin: 1vw
+}
+
+#options > section > span > select {
+  font-size: 1.1vw;
+  background-color: white;
+  border-radius: 0.3vw;
+  padding: 0.2vw;
+  margin-left: 1vw
+}
+
+#options > section > span > input[type="checkbox"] {
+  width: 1vw;
+  height: 1vw;
+  margin-left: 1vw
+}
+
+#options > section > span > b:last-child {
+  cursor: pointer
+}
+
+#results { right: 0 }
+
+#results > section * { user-select: text }
+
+#abort {
+  text-align: center;
+  font-size: 2vw;
+  font-weight: bold;
+  margin-top: 50px;
+  cursor: pointer;
+  color: #ff3333
+}
+
+.theme {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  left: 50%;
+  transform: translateX(-50%);
+  gap: 10px;
+  padding: 1vw 4vw;
+  font-size: 35px;
+  bottom: 0
+}
+
+.theme > label {
+  position: relative;
+  height: 34px;
+  width: 60px
+}
+
+#theme-checkbox { display: none }
+
+.slidebar {
+  background-color: #ccc;
+  position: absolute;
+  cursor: pointer;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  transition: 0.5s
+}
+
+.slidebar:before {
+  background-color: white;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: 0.5s;
+  width: 26px
+}
+
+.theme > label > input:checked + .slidebar:before {
+  transform: translateX(26px)
+}
+
+.theme > label > input:checked + .slidebar {
+  background-color: #75a0f0
+}
+
+.slidebar { border-radius: 34px }
+
+.slidebar:before { border-radius: 50% }
+
+@media screen and (max-width: 1000px) {
+  h1 { font-size: 5vw }
+  form > input[type="text"] {
+    margin-top: 20vh;
+    font-size: 2.5vw;
+    padding: 1.2vw
+  }
+  button, input[type="submit"] {
+    padding: 0.6vw 1vw;
+    border-radius: 0.5vw;
+    font-size: 1.5vw
+  }
+  aside {
+    width: 50vw;
+    border-radius: 2vw;
+    padding: 2vw 4vw
+  }
+  aside > h2 { font-size: 3vw }
+  aside > p { font-size: 2vw }
+  details { width: 31vw; top: 35vh }
+  details > summary { font-size: 2.5vw }
+  details > section > span { font-size: 1.8vw }
+  #options > section > span > select {
+    font-size: 1.3vw;
+    border-radius: 0.3vw;
+    padding: 0.2vw
+  }
+  #options > section > span > input[type="checkbox"] {
+    width: 1.5vw;
+    height: 1.5vw
+  }
+  #abort { font-size: 2.5vw }
+}
+
+@media screen and (max-width: 700px) {
+  h1 { font-size: 10vw }
+  form > input[type="text"] {
+    font-size: 5vw;
+    padding: 3vw;
+    border-radius: 2vw
+  }
+  button, input[type="submit"] {
+    font-size: 3vw;
+    padding: 1.5vw 2vw;
+    border-radius: 1vw
+  }
+  aside {
+    width: 80vw;
+    border-radius: 2vw;
+    padding: 2vw 4vw
+  }
+  aside > h2 { font-size: 5vw }
+  aside > p { font-size: 3vw }
+  details {
+    width: 80vw;
+    position: relative;
+    margin: 100px auto;
+    top: 0;
+    right: 0
+  }
+  details > summary {
+    font-size: 5vw;
+    margin-bottom: 2vw
+  }
+  details > section {
+    padding: 3vw;
+    border-radius: 3vw
+  }
+  details > section > span {
+    font-size: 4vw;
+    margin: 2vw
+  }
+  #options > section > span > select {
+    font-size: 3.5vw;
+    border-radius: 1vw
+  }
+  #options > section > span > input[type="checkbox"] {
+    width: 3vw;
+    height: 3vw;
+    margin-left: 2vw
+  }
+  #abort { font-size: 6vw; }
+}
+
+@keyframes fade {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
