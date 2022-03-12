@@ -10,6 +10,7 @@ export default function App() {
   );
 }
 
+//utility functions
 let web_worker;
 const newWorkerInstance = () => {
   web_worker?.terminate();
@@ -17,18 +18,6 @@ const newWorkerInstance = () => {
   return web_worker;
 };
 
-const chooseAlgorithm = (number, config) => {
-  const length = number.toString().length;
-  if (config.algorithm === "automatic") {
-    if (length > 6) {
-      config.algorithm = "trial-div v2";
-    } else {
-      config.algorithm = "trial-division";
-    }
-  }
-};
-
-//utility functions
 const setToStorage = (new_obj, key) =>
   localStorage.setItem(
     key,
@@ -122,7 +111,6 @@ function Configuration() {
               <option>automatic</option>
               <option>trial-division</option>
               <option>trial-div v2</option>
-              <option>quadratic-seive</option>
             </select>
           </span>
           <span title="Display numbers in scientific notation">
@@ -176,7 +164,7 @@ function Configuration() {
             <a
               target="_blank"
               rel="noopener"
-              href="https://github.com/"
+              href="https://github.com/rattleSSnake/Factorization-Calculator"
               title="For further info and explanations, check the github repo"
             >
               <b>Head to repository</b>
@@ -206,8 +194,8 @@ function UserInput({ config }) {
   );
 
   const handleSubmit = (event) => {
+    if (config.algorithm === "automatic") config.algorithm = "trial-div v2";
     event.preventDefault();
-    chooseAlgorithm(input, config);
     setNumber(
       input >= Number.MAX_SAFE_INTEGER || config.alwaysUseBigInts
         ? BigInt(input)
@@ -447,15 +435,15 @@ function BenchmarkingTest({ exit }) {
       setResults({
         time: about,
         speed:
-          about < 1000
+          about < 500
             ? "incredibly fast!"
-            : about < 1500
-            ? "very fast!"
-            : about < 2500
+            : about < 1000
+            ? "very fast"
+            : about < 2000
             ? "fast"
-            : about < 3500
+            : about < 3000
             ? "moderate"
-            : about < 5000
+            : about < 4000
             ? "slow"
             : "very slow",
       });

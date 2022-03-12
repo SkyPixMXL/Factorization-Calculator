@@ -3,7 +3,7 @@
   --background-color: #262626;
   --box-background-color: #3c3c3c;
   --form-background-color: white;
-  --benchmarkingTest-bg: rgba(255, 255, 255, 0.8)
+  --benchmarkingTest-bg: rgba(255, 255, 255, 0.8);
 }
 
 [data-theme="light"] {
@@ -14,66 +14,89 @@
   --benchmarkingTest-bg: #e2e2e2cc;
 }
 
+@font-face {
+  font-family: "Inconsolata";
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inconsolata/v21/QldgNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLYxYWI2qfdm7Lpp4U8WR32lw.woff2)
+    format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
 * {
-  font-family: consolas;
-  user-select: none
+  font-family: "Inconsolata", monospace;
+  user-select: none;
 }
 
 body {
   background-color: var(--background-color);
   color: var(--font-color);
   animation: fade 2s;
-  margin: 0
+  margin: 0;
 }
 
-input, button {
-  background-color: var(--form-background-color)
+input,
+button {
+  background-color: var(--form-background-color);
+  color: black;
 }
 
-input:not([type="text"]), summary, select, button {
-  cursor: pointer
+input:not([type="text"]),
+summary,
+select,
+button {
+  cursor: pointer;
 }
 
-input, button, select {
+input,
+button,
+select {
   text-align: center;
   border: none;
-  outline: none
+  outline: none;
 }
 
 a {
   color: #75a0f0;
-  text-decoration: none
+  text-decoration: none;
 }
 
-button, input[type="submit"] {
+button,
+input[type="submit"] {
   padding: 0.5vw 0.8vw;
   border-radius: 0.5vw;
-  font-size: 1.2vw
+  font-size: 1.3vw;
 }
 
-button[disabled] { cursor: not-allowed }
+button[disabled] {
+  cursor: not-allowed;
+}
 
 h1 {
   margin-top: 8vh;
   text-align: center;
-  font-size: 4vw
+  font-size: 5vw;
 }
 
 form > input[type="text"] {
   margin: 15vh auto 4vh auto;
   display: block;
   padding: 1.2vw 2.4vw;
-  font-size: 1.6vw;
-  border-radius: 1vw
+  font-size: 1.8vw;
+  border-radius: 1vw;
 }
 
 form > input[type="submit"] {
   margin: auto;
-  display: block
+  display: block;
 }
 
 form > input:hover {
-  filter: drop-shadow(0 0 1vw white)
+  filter: drop-shadow(0 0 1vw white);
 }
 
 aside {
@@ -92,66 +115,71 @@ aside {
 
 aside > h2 {
   font-size: 2.5vw;
-  margin-top: 1vw
+  margin-top: 1vw;
 }
 
 aside > p {
   text-align: left;
-  font-size: 1.5vw
+  font-size: 1.5vw;
 }
 
 aside > button {
-  background-color: white
+  background-color: white;
 }
 
 details {
   width: 26vw;
   position: absolute;
   margin: 0 2vw;
-  top: 30vh
+  top: 30vh;
 }
 
 details > summary {
   font-weight: bold;
-  font-size: 1.6vw;
-  margin-bottom: 1vw
+  font-size: 2vw;
+  margin-bottom: 1vw;
 }
 
 details > section {
   animation: fade 1s;
   background-color: var(--box-background-color);
   border-radius: 1vw;
-  padding: 1.5vw
+  padding: 1.5vw;
 }
 
 details > section > span {
   word-wrap: break-word;
-  font-size: 1.4vw;
+  font-size: 1.5vw;
   display: block;
-  margin: 1vw
+  margin: 1vw;
 }
 
 #options > section > span > select {
-  font-size: 1.1vw;
+  font-size: 1.2vw;
   background-color: white;
+  color: black;
   border-radius: 0.3vw;
   padding: 0.2vw;
-  margin-left: 1vw
+  margin-left: 1vw;
 }
 
 #options > section > span > input[type="checkbox"] {
   width: 1vw;
   height: 1vw;
-  margin-left: 1vw
+  margin-left: 1vw;
 }
 
 #options > section > span > b:last-child {
-  cursor: pointer
+  cursor: pointer;
 }
 
-#results { right: 0 }
+#results {
+  right: 0;
+}
 
-#results > section * { user-select: text }
+#results > section * {
+  user-select: text;
+}
 
 #abort {
   text-align: center;
@@ -159,7 +187,7 @@ details > section > span {
   font-weight: bold;
   margin-top: 50px;
   cursor: pointer;
-  color: #ff3333
+  color: #ff3333;
 }
 
 .theme {
@@ -171,16 +199,18 @@ details > section > span {
   gap: 10px;
   padding: 1vw 4vw;
   font-size: 35px;
-  bottom: 0
+  bottom: 0;
 }
 
 .theme > label {
   position: relative;
   height: 34px;
-  width: 60px
+  width: 60px;
 }
 
-#theme-checkbox { display: none }
+#theme-checkbox {
+  display: none;
+}
 
 .slidebar {
   background-color: #ccc;
@@ -190,7 +220,7 @@ details > section > span {
   left: 0;
   right: 0;
   top: 0;
-  transition: 0.5s
+  transition: 0.5s;
 }
 
 .slidebar:before {
@@ -201,106 +231,143 @@ details > section > span {
   left: 4px;
   position: absolute;
   transition: 0.5s;
-  width: 26px
+  width: 26px;
 }
 
 .theme > label > input:checked + .slidebar:before {
-  transform: translateX(26px)
+  transform: translateX(26px);
 }
 
 .theme > label > input:checked + .slidebar {
-  background-color: #75a0f0
+  background-color: #75a0f0;
 }
 
-.slidebar { border-radius: 34px }
+.slidebar {
+  border-radius: 34px;
+}
 
-.slidebar:before { border-radius: 50% }
+.slidebar:before {
+  border-radius: 50%;
+}
 
 @media screen and (max-width: 1000px) {
-  h1 { font-size: 5vw }
+  h1 {
+    font-size: 6vw;
+  }
   form > input[type="text"] {
     margin-top: 20vh;
     font-size: 2.5vw;
-    padding: 1.2vw
+    padding: 1.2vw;
   }
-  button, input[type="submit"] {
+  button,
+  input[type="submit"] {
     padding: 0.6vw 1vw;
     border-radius: 0.5vw;
-    font-size: 1.5vw
+    font-size: 2vw;
   }
   aside {
     width: 50vw;
     border-radius: 2vw;
-    padding: 2vw 4vw
+    padding: 2vw 4vw;
   }
-  aside > h2 { font-size: 3vw }
-  aside > p { font-size: 2vw }
-  details { width: 31vw; top: 35vh }
-  details > summary { font-size: 2.5vw }
-  details > section > span { font-size: 1.8vw }
+  aside > h2 {
+    font-size: 3vw;
+  }
+  aside > p {
+    font-size: 2vw;
+  }
+  details {
+    width: 31vw;
+    top: 35vh;
+  }
+  details > summary {
+    font-size: 3vw;
+  }
+  details > section > span {
+    font-size: 2vw;
+  }
   #options > section > span > select {
-    font-size: 1.3vw;
-    border-radius: 0.3vw;
-    padding: 0.2vw
+    font-size: 1.5vw;
+    padding: 0.5vw;
   }
   #options > section > span > input[type="checkbox"] {
     width: 1.5vw;
-    height: 1.5vw
+    height: 1.5vw;
   }
-  #abort { font-size: 2.5vw }
+  #abort {
+    font-size: 2.5vw;
+  }
 }
 
 @media screen and (max-width: 700px) {
-  h1 { font-size: 10vw }
-  form > input[type="text"] {
-    font-size: 5vw;
-    padding: 3vw;
-    border-radius: 2vw
+  h1 {
+    font-size: 12vw;
   }
-  button, input[type="submit"] {
-    font-size: 3vw;
+  form {
+    margin-bottom: 100px;
+  }
+  form > input[type="text"] {
+    font-size: 6vw;
+    padding: 3vw;
+    border-radius: 3vw;
+    margin-bottom: 25px;
+  }
+  button,
+  input[type="submit"] {
+    font-size: 4vw;
     padding: 1.5vw 2vw;
-    border-radius: 1vw
+    border-radius: 1.5vw;
   }
   aside {
     width: 80vw;
     border-radius: 2vw;
-    padding: 2vw 4vw
+    padding: 2vw 4vw;
   }
-  aside > h2 { font-size: 5vw }
-  aside > p { font-size: 3vw }
+  aside > h2 {
+    font-size: 5vw;
+  }
+  aside > p {
+    font-size: 3vw;
+  }
   details {
     width: 80vw;
     position: relative;
     margin: 100px auto;
     top: 0;
-    right: 0
+    right: 0;
   }
   details > summary {
-    font-size: 5vw;
-    margin-bottom: 2vw
+    font-size: 6vw;
+    margin-bottom: 2vw;
   }
   details > section {
     padding: 3vw;
-    border-radius: 3vw
+    border-radius: 3vw;
   }
   details > section > span {
-    font-size: 4vw;
-    margin: 2vw
+    font-size: 5vw;
+    margin: 3vw;
   }
   #options > section > span > select {
-    font-size: 3.5vw;
-    border-radius: 1vw
+    font-size: 4vw;
+    border-radius: 1vw;
+    padding: 1vw;
   }
   #options > section > span > input[type="checkbox"] {
     width: 3vw;
     height: 3vw;
-    margin-left: 2vw
+    margin-left: 2vw;
   }
-  #abort { font-size: 6vw; }
+  #abort {
+    font-size: 6vw;
+  }
 }
 
 @keyframes fade {
-  from { opacity: 0 }
-  to { opacity: 1 }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
